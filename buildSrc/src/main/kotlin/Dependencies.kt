@@ -26,9 +26,16 @@ object Dependencies {
     }
 
     object Android {
+        private const val lifecycle = "2.6.2"
+        private const val navigation = "2.7.4"
+
         const val coreKtx = "androidx.core:core-ktx:1.12.0"
-        const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"
+        const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
         const val material = "com.google.android.material:material:1.10.0"
+        const val legacySupport = "androidx.legacy:legacy-support-v4:1.0.0"
+        const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
+        const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigation"
+        const val navigationUi = "androidx.navigation:navigation-ui-ktx:$navigation"
     }
 
     object Test {
@@ -49,5 +56,12 @@ object Dependencies {
         const val okhttp3 = "com.squareup.okhttp3:okhttp:4.9.3"
     }
 
+    object Glide {
+        const val core = "com.github.bumptech.glide:glide:4.16.0"
+        const val compiler = "com.github.bumptech.glide:compiler:4.12.0"
+        const val compose = "com.github.skydoves:landscapist-glide:2.2.10"
+    }
+
     const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2"
+    const val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }

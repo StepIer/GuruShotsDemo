@@ -6,6 +6,7 @@ plugins {
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
     kotlin("plugin.serialization")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -38,6 +39,7 @@ android {
 
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.3"
@@ -59,8 +61,12 @@ android {
 dependencies {
 
     implementation(Dependencies.Android.coreKtx)
-    implementation(Dependencies.Android.lifecycle)
+    implementation(Dependencies.Android.lifecycleRuntime)
     implementation(Dependencies.Android.material)
+    implementation(Dependencies.Android.navigationFragment)
+    implementation(Dependencies.Android.navigationUi)
+    implementation(Dependencies.Android.legacySupport)
+    implementation(Dependencies.Android.lifecycleViewModel)
 
     implementation(Dependencies.Compose.activity)
     implementation(Dependencies.Compose.ui)
@@ -70,23 +76,20 @@ dependencies {
     implementation(Dependencies.Compose.navigation)
 
     implementation(Dependencies.Hilt.android)
-    implementation(Dependencies.Hilt.composeNavigation)
 
     implementation(Dependencies.Retrofit.retrofit)
     implementation(Dependencies.Retrofit.serialization)
     implementation(Dependencies.Retrofit.okhttp3)
 
+    implementation(Dependencies.Glide.core)
+    implementation(Dependencies.Glide.compose)
+    annotationProcessor(Dependencies.Glide.compiler)
+
     implementation(Dependencies.serialization)
+    implementation(Dependencies.swipeRefresh)
 
     kapt(Dependencies.Hilt.compiler)
     kapt(Dependencies.Hilt.androidCompiler)
-
-    testImplementation(Dependencies.Test.junit)
-    testImplementation(Dependencies.Test.mockito)
-    testImplementation(Dependencies.Test.coroutinesTest)
-    androidTestImplementation(Dependencies.AndroidTest.ext)
-    androidTestImplementation(Dependencies.AndroidTest.ui)
-    androidTestImplementation(Dependencies.AndroidTest.espresso)
 
     debugImplementation(Dependencies.Compose.debugUiTooling)
     debugImplementation(Dependencies.Compose.debugUiTestManifest)

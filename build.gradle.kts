@@ -6,4 +6,5 @@ plugins {
     kotlin("kapt") version PluginVersion.kotlinVersion apply false
     id("com.google.dagger.hilt.android") version PluginVersion.kaptVersion apply false
     kotlin("plugin.serialization") version PluginVersion.serialization apply false
+    id("androidx.navigation.safeargs") version PluginVersion.safeArgs apply false
 }
